@@ -1,0 +1,15 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Modification</title>
+</head>
+
+
+<h1>Modifiez votre email {{user.first_name}}</h1>
+
+<form action="{% url 'login:enregistrer' user.username%}" method="post">
+    {% csrf_token %}
+    <label for="name">Nouveau Mail : </label>
+    <input type="text" id="mail" name="mail" required value = "" > <br>
+    <input type="submit" value="Enregistrer">
+</form>

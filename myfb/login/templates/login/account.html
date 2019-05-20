@@ -1,0 +1,18 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Mon Compte</title>
+</head>
+
+<h1>Salut {{user.first_name}} !</h1>
+
+<ul>
+    <li>Prénom : {{user.first_name}}</li>
+    <li>Nom : {{user.last_name}}</li>
+    <li>user_name : {{user.username}}</li>
+    <li>mail : {{user.email}}</li>
+</ul>
+
+<a href={% url 'login:modif' user.username %}>Modifier</a><br>
+
+<a href={% url 'login:logout' %}>Déconnexion</a>

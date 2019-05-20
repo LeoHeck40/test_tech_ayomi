@@ -1,0 +1,24 @@
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Login</title>
+    {% load bootstrap4 %}
+</head>
+
+
+<h1>Page de Connexion :</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'login:connexion' %}" method="get" id='form'>
+    
+    <label for="name">Nom d'utilisateur : </label>
+    <input type="text" id="name" name="name" required placeholder = "nom_utilisateur" > <br>
+    <label for="password">Mot de Passe : </label>
+    <input type="password" id="password" name="password" required placeholder = "mot_de_passe" > <br>
+    <input type="submit" value="Se connecter">
+</form>
+
+
+<a href={% url 'login:create' %}>Créer un compte</a>
